@@ -1,4 +1,4 @@
-const COZE_PAT_TOKEN = 'pat_vMuDB8Hq7uroqI0bb54NI1sTHnDV8q7SJTCS2IHqlXrdKUFPCJSB5PDhRC0Oso4W';
+const COZE_PAT_TOKEN = 'pat_P4ryfFuYZR0HWAOErGNwwE3d56ESf4tKXMTvhww7inI9tC4v8KKJVxpahbTld1Td';
 
 function initCozeWebChat() {
   if (typeof CozeWebSDK === 'undefined') {
@@ -16,6 +16,8 @@ function initCozeWebChat() {
       type: 'token',
       token: COZE_PAT_TOKEN,
       onRefreshToken: async () => COZE_PAT_TOKEN,
+      // Cho phép dùng PAT token trong browser (mặc định SDK chặn vì lý do bảo mật)
+      allowPersonalAccessTokenInBrowser: true,
     },
     userInfo: {
       id: 'user',
